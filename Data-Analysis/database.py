@@ -26,7 +26,7 @@ session = Session()
 
 hashtag_tweet = Table('hashtag_tweet', Base.metadata, 
 	Column('hashtag_id', Integer, ForeignKey('hashtags.id'), nullable=False), 
-	Column('tweet_id', Integer, ForeignKey('tweet.id'),nullable=False))
+	Column('tweet_id', Integer, ForeignKey('tweets.id'),nullable=False))
 
 class Tweet(Base):
 	__tablename__ = 'tweets'
@@ -75,7 +75,7 @@ class Hashtag(Base):
 	__tablename__ = 'hashtags'
 	id = Column(Integer, primary_key=True)
 	text = Column(String(200), nullable=False)
-	tweets = relationship('Tweet', secondary='hashtag_tweet',back_populates='hashtag')
+	tweets = relationship('Tweet', secondary='hashtag_tweet',back_populates='hashtags')
 
 	def __repr__(self):
 		return '<Hashtag {}>'.format(self.text)
