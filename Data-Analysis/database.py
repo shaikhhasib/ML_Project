@@ -47,3 +47,23 @@ class Tweet(Base):
 	source = Column(String)
 	is_retweet = Column(String)
 	hashtags = relationship('Hashtag', secondary='hashtag_tweet',back_populates='tweets')
+
+	def __repr__(self):
+		return '<Tweet {}>'.format(self.id)
+
+class User(Base):
+	__tablename__ = 'users'
+	id = Column(Integer, primary_key=True)
+	uid = Column(String(50), nullable=False)
+	name = Column(String(100), nullable=False)
+	screen_name = Column(String)
+	created_at = Column(String)
+	# Nullable
+	description = Column(String)
+	followers_count = Column(Integer)
+	friends_count = Column(Integer)
+	statuses_count = Column(Integer)
+	favourites_count = Column(Integer)
+	listed_count = Column(Integer)
+	geo_enabled = Column(Boolean)
+	lang = Column(String)
