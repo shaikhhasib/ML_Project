@@ -79,3 +79,9 @@ class Hashtag(Base):
 
 	def __repr__(self):
 		return '<Hashtag {}>'.format(self.text)
+
+def init_db():
+	Base metadata.create_all()
+
+if not path.isfile(database_filepath):
+	init_db()
