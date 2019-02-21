@@ -67,3 +67,6 @@ class User(Base):
 	listed_count = Column(Integer)
 	geo_enabled = Column(Boolean)
 	lang = Column(String)
+
+	def __repr__(self):
+		return '<User {}>'.format(self.id)
