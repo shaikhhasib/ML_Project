@@ -81,7 +81,7 @@ class Hashtag(Base):
 		return '<Hashtag {}>'.format(self.text)
 
 def init_db():
-	Base metadata.create_all()
+	Base.metadata.create_all()
 
 if not path.isfile(database_filepath):
 	init_db()
