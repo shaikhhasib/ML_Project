@@ -8,7 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 database_filename = 'twitter.sqlite3'
 
 directory  = path.abspath(path.dirname(__file__))
-databse_filepath = path.join(directory, database_filename)
+database_filepath = path.join(directory, database_filename)
 
 engine_url = 'sqlite:///{}'.format(database_filepath)
 
