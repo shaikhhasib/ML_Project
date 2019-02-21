@@ -33,7 +33,7 @@ class Tweet(Base):
 	id = Column(Integer, primary_key=True)
 	tid = Column(String(100), nullable=False)
 	tweet = Column(String(300),nullable=False)
-	user_id = Column(Integer, ForeignKey('users.id'), nullable=Flase)
+	user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
 	coordinates = Column(String(50), nullable=True)
 	user = relationship('User', backref='tweets')
 	created_at = Column(string(100), nullable=False)
