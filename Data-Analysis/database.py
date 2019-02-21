@@ -70,3 +70,12 @@ class User(Base):
 
 	def __repr__(self):
 		return '<User {}>'.format(self.id)
+
+class Hashtag(Base):
+	__tablename__ = 'hashtags'
+	id = Column(Integer, primary_key=True)
+	text = Column(String(200), nullable=False)
+	tweets = relationship('Tweet', secondary='hashtag_tweet',back_populates='hashtag')
+
+	def __repr__(self):
+		return '<Hashtag {}>'.format(self.text)
