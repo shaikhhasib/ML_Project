@@ -1,5 +1,5 @@
 # setup for BDS
-from setuptools import setup, find_packages
+#from setuptools import setup, find_packages
 
 setup(
 	name='Data_Analysis',
