@@ -8,7 +8,7 @@ setup(
 	license='BSD',
 	author='Muhammad Hasib',
 	packages=find_packages(),
-	install_requires=['PyQt5','pandas','sqlalchemy','nltk','numpy','jupyter','python-twitter', 'tweepy'],
+	install_requires=['PyQt5','pandas','sqlalchemy','nltk','numpy','jupyter','python-twitter', 'tweepy','twitter'],
 	entry_points={},
 	extras_require={'dev': ['flake8',]},
 	)
